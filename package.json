@@ -1,8 +1,8 @@
 {
-  "name": "@codechecks/lighthouse-keeper",
+  "name": "@codechecks/vis-reg-storybook",
   "description": "",
   "keywords": [],
-  "repository": "codechecks/lighthouse-keeper",
+  "repository": "codechecks/vis-reg-storybook",
   "author": "Chris Kaczor <chris@kaczor.io>",
   "version": "0.0.1",
   "main": "lib/index.js",
