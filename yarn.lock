@@ -52,6 +52,22 @@
     lodash "^4.17.11"
     type-coverage-core "^2.2.0"
 
+"@codechecks/utils@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@codechecks/utils/-/utils-0.1.1.tgz#58256db07ba6ed8d18694954d18a572bd078176d"
+  integrity sha512-c/rIWTJ1gEourQKQ9+HdbVKvZGH9osyBrm5pbOliO03qA8O9EZMZIvq280FD4wQLyNMbSEN9oane0gfLAikgfg==
+  dependencies:
+    "@types/debug" "^4.1.5"
+    debug "^4.1.1"
+    execa "^2.0.4"
+    lodash "^4.17.15"
+    promise "^8.0.2"
+    promise-all "^1.0.0"
+    tmp-promise "^2.0.2"
+    ts-essentials "^3.0.2"
+    ts-node "^8.0.2"
+    url-join "^4.0.0"
+
 "@codechecks/vis-reg@^0.0.2":
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/@codechecks/vis-reg/-/vis-reg-0.0.2.tgz#23a940fb8fa9abe64b8828f134af053d82eaa071"
@@ -107,17 +123,15 @@
   dependencies:
     chalk "*"
 
+"@types/debug@^4.1.5":
+  version "4.1.5"
+  resolved "https://registry.yarnpkg.com/@types/debug/-/debug-4.1.5.tgz#b14efa8852b7768d898906613c23f688713e02cd"
+  integrity sha512-Q1y515GcOdTHgagaVFhHnIFQ38ygs/kmxdNpvpou+raI9UO3YZcHDngBSYKQklcKlvA7iuQlmIKbzvmxcOE9CQ==
+
 "@types/events@*":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@types/events/-/events-3.0.0.tgz#2862f3f58a9a7f7c3e78d79f130dd4d71c25c2a7"
   integrity sha512-EaObqwIvayI5a8dCzhFrjKzVwKLxjoG9T6Ppd5CEo07LRKfQ8Yokw54r5+Wq7FaBQ+yXRvQAYPrHwya1/UFt9g==
-
-"@types/execa@^0.9.0":
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/@types/execa/-/execa-0.9.0.tgz#9b025d2755f17e80beaf9368c3f4f319d8b0fb93"
-  integrity sha512-mgfd93RhzjYBUHHV532turHC2j4l/qxsF/PbfDmprHDEUHmNZGlDn1CEsulGK3AfsPdhkWzZQT/S/k0UGhLGsA==
-  dependencies:
-    "@types/node" "*"
 
 "@types/glob@*":
   version "7.1.1"
@@ -2226,7 +2240,7 @@ is-path-inside@^1.0.0:
   dependencies:
     path-is-inside "^1.0.1"
 
-is-plain-object@^2.0.3, is-plain-object@^2.0.4:
+is-plain-object@^2.0.1, is-plain-object@^2.0.3, is-plain-object@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/is-plain-object/-/is-plain-object-2.0.4.tgz#2c163b3fafb1b606d9d17928f05c2a1c38e07677"
   integrity sha512-h5PpgXkWitc38BBMYawTYMWJHFZJVnBquFE57xFpjB8pJFiF6gZ+bU+WyI/yqXiFR5mdLsgYNaPe8uao6Uv9Og==
@@ -2916,7 +2930,7 @@ lodash.toarray@^4.4.0:
   resolved "https://registry.yarnpkg.com/lodash.toarray/-/lodash.toarray-4.4.0.tgz#24c4bfcd6b2fba38bfd0594db1179d8e9b656561"
   integrity sha1-JMS/zWsvuji/0FlNsRedjptlZWE=
 
-lodash@^4.17.11, lodash@^4.17.14, lodash@^4.17.4, lodash@^4.3.0:
+lodash@^4.17.11, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.4, lodash@^4.3.0:
   version "4.17.15"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
@@ -3729,6 +3743,13 @@ progress@^2.0.1:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
+
+promise-all@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/promise-all/-/promise-all-1.0.0.tgz#96f2c71973c94f1126f000463648e13a2d100b84"
+  integrity sha1-lvLHGXPJTxEm8ABGNkjhOi0QC4Q=
+  dependencies:
+    is-plain-object "^2.0.1"
 
 promise@^8.0.2:
   version "8.0.3"
@@ -4656,6 +4677,11 @@ ts-essentials@^2.0.2:
   version "2.0.12"
   resolved "https://registry.yarnpkg.com/ts-essentials/-/ts-essentials-2.0.12.tgz#c9303f3d74f75fa7528c3d49b80e089ab09d8745"
   integrity sha512-3IVX4nI6B5cc31/GFFE+i8ey/N2eA0CZDbo6n0yrz0zDX8ZJ8djmU1p+XRz7G3is0F3bB3pu2pAroFdAWQKU3w==
+
+ts-essentials@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/ts-essentials/-/ts-essentials-3.0.2.tgz#143a60857a97c0e431b12bddbc4f3a7d7f3c40d4"
+  integrity sha512-vOdAnCS2tt+4fML/Xnf5iWvr+3bAhG0odly05UprbuwgI5hfRhUZ9a+K3hdYSSM0TPRn8/VS3F4Pza1uNqsTKw==
 
 ts-jest@^23.10.5:
   version "23.10.5"

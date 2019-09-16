@@ -1,39 +1,41 @@
-import execa = require("execa");
 import { codechecks } from "@codechecks/client";
+import { createDebug, createTmpDir, execute } from "@codechecks/utils";
 import { visRegCodecheck } from "@codechecks/vis-reg";
-import { dir as tmpDir } from "tmp-promise";
-import * as waitForPort from "wait-for-localhost";
 
 import { UserOptions, parseUserOptions } from "./options";
+import { using } from "@codechecks/utils";
+import { startStorybook } from "./start-storybook";
+
+const debug = createDebug("vis-reg-storybook");
 
 export async function visRegStorybook(_options: UserOptions = {}): Promise<void> {
   const options = parseUserOptions(_options);
 
-  const { path: tmpPathDir } = await tmpDir();
+  const tmpDir = await createTmpDir();
 
-  console.log("Start cmd", options.startServerCmd);
-  const startServerCmd = execa.command(options.startServerCmd, {
-    timeout: 300000, // @todo we should fine a way to only timeout when there was no new output for x seconds
-    cwd: codechecks.context.workspaceRoot,
-  });
-  // wait for port
-  await waitForPort({ port: 9001 });
+  const createStorybook = () =>
+    startStorybook({
+      cmd: codechecks.context.workspaceRoot,
+      port: 9001,
+      startServerCmd: options.startServerCmd,
+    });
 
-  console.log("STORYBOOK time!");
-  await execa(
-    require.resolve("zisui/lib/node/cli.js"),
-    ["--outDir", tmpPathDir, options.storybookUrl],
-    {
-      timeout: 300000, // @todo we should fine a way to only timeout when there was no new output for x seconds
+  await using({ createStorybook }, async () => {
+    debug("Running zisui ", options.startServerCmd);
+
+    await execute({
+      file: require.resolve("zisui/lib/node/cli.js"),
+      args: ["--outDir", tmpDir, options.storybookUrl],
       cwd: codechecks.context.workspaceRoot,
-    },
-  );
+    });
 
-  await visRegCodecheck({
-    collectionName: options.collectionName,
-    imagesPath: tmpPathDir,
+    debug("Running vis reg codecheck");
+
+    await visRegCodecheck({
+      collectionName: options.collectionName,
+      imagesPath: tmpDir,
+    });
   });
-  await startServerCmd.kill();
 }
 
 export default visRegStorybook;
