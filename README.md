@@ -26,8 +26,6 @@ Add to your `codechecks.yml` file:
 ```yml
 checks:
   - name: vis-reg-storybook
-    options:
-      # ...
   # ...
 ```
 

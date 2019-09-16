@@ -1,2 +1,4 @@
 checks:
   - name: ../src/index.ts
+    options:
+        
