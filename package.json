@@ -50,7 +50,7 @@
     "@codechecks/client": "^0.1.0"
   },
   "dependencies": {
-    "@codechecks/utils": "^0.1.1",
+    "@codechecks/utils": "^0.1.2",
     "@codechecks/vis-reg": "^0.0.2",
     "npm-which": "^3.0.1",
     "wait-for-localhost": "^3.2.0",

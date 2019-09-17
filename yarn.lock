@@ -52,10 +52,10 @@
     lodash "^4.17.11"
     type-coverage-core "^2.2.0"
 
-"@codechecks/utils@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@codechecks/utils/-/utils-0.1.1.tgz#58256db07ba6ed8d18694954d18a572bd078176d"
-  integrity sha512-c/rIWTJ1gEourQKQ9+HdbVKvZGH9osyBrm5pbOliO03qA8O9EZMZIvq280FD4wQLyNMbSEN9oane0gfLAikgfg==
+"@codechecks/utils@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@codechecks/utils/-/utils-0.1.2.tgz#ee06cd45a15b2c1603b3c0f7ad76dcd8f0fe005a"
+  integrity sha512-fZmHutPLAyxQOBQ8ntW2V3qBSx6I/uSyLd/NeUdJTa/FWcJa23mV8J8pgMoWS05wr83BGaJokfqXiTBAhAEtuA==
   dependencies:
     "@types/debug" "^4.1.5"
     debug "^4.1.1"
